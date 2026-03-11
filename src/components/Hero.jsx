@@ -44,7 +44,7 @@ export default function Hero() {
 
       {/* Content */}
       <div
-        className="container"
+        className="container resp-hero-grid"
         style={{
           position: 'relative',
           zIndex: 2,
@@ -135,6 +135,7 @@ export default function Hero() {
 
           <motion.div
             variants={fadeUp}
+            className="resp-hero-stats"
             style={{
               display: 'flex',
               gap: 40,
@@ -166,6 +167,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+          className="resp-calc"
           style={{ paddingLeft: 24, display: 'flex', justifyContent: 'flex-end' }}
         >
           <Calculator />

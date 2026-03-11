@@ -76,7 +76,7 @@ export default function SavingsShowcase() {
           מקרי בוחן אמיתיים
         </motion.p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div className="resp-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {cases.map((c, i) => (
             <motion.div
               key={i}

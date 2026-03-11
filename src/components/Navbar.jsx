@@ -11,6 +11,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [activeHash, setActiveHash] = useState('')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -55,7 +56,8 @@ export default function Navbar() {
         </span>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+      {/* Desktop links */}
+      <div className="nav-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
         {navLinks.map(link => (
           <a
             key={link.href}
@@ -84,16 +86,43 @@ export default function Navbar() {
             fontWeight: 500,
             transition: 'all 0.2s',
           }}
-          onMouseEnter={e => {
-            e.target.style.background = 'var(--slate)'
-          }}
-          onMouseLeave={e => {
-            e.target.style.background = 'var(--navy)'
-          }}
+          onMouseEnter={e => { e.target.style.background = 'var(--slate)' }}
+          onMouseLeave={e => { e.target.style.background = 'var(--navy)' }}
         >
           ייעוץ חינם ←
         </a>
       </div>
+
+      {/* Hamburger button */}
+      <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="תפריט">
+        {menuOpen ? (
+          <>
+            <span style={{ transform: 'rotate(45deg) translate(5px, 5px)' }} />
+            <span style={{ opacity: 0 }} />
+            <span style={{ transform: 'rotate(-45deg) translate(5px, -5px)' }} />
+          </>
+        ) : (
+          <>
+            <span /><span /><span />
+          </>
+        )}
+      </button>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="nav-mobile-menu">
+          {navLinks.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => { setActiveHash(link.href); setMenuOpen(false) }}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a href="#contact" onClick={() => setMenuOpen(false)}>ייעוץ חינם ←</a>
+        </div>
+      )}
     </motion.nav>
   )
 }

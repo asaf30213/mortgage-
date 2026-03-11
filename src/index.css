@@ -127,3 +127,119 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
   border: 2px solid #fff;
 }
+
+/* ── Mobile Responsive ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.nav-mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+  .section-subtitle {
+    font-size: 0.95rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Navbar */
+  .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: flex !important;
+  }
+  .nav-mobile-menu {
+    display: flex !important;
+    position: absolute;
+    top: 72px;
+    right: 0;
+    left: 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px 24px;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+  .nav-mobile-menu a {
+    font-size: 1rem;
+    color: var(--text2);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: block;
+  }
+  .nav-mobile-menu a:last-child {
+    border-bottom: none;
+    margin-top: 8px;
+    background: var(--navy);
+    color: #ffffff !important;
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px 0;
+  }
+
+  /* Grid helpers */
+  .resp-grid-3 { grid-template-columns: 1fr !important; }
+  .resp-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+  .resp-grid-form { grid-template-columns: 1fr !important; }
+  .resp-footer-grid { grid-template-columns: 1fr !important; text-align: right !important; }
+
+  /* Hero */
+  .resp-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 24px !important;
+    padding-bottom: 48px !important;
+  }
+  .resp-hero-stats {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+  .resp-hero-stats > div {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+  .resp-calc {
+    padding-left: 0 !important;
+    justify-content: center !important;
+  }
+  .resp-calc > div {
+    max-width: 100% !important;
+  }
+
+  /* Section padding */
+  .resp-section { padding: 64px 0 !important; }
+
+  /* HowItWorks dashed line */
+  .resp-hide { display: none !important; }
+
+  /* TrustBar */
+  .resp-trustbar {
+    padding: 16px 24px !important;
+    justify-content: center !important;
+  }
+
+  /* FooterCTA form */
+  .resp-form {
+    padding: 24px 20px 20px !important;
+  }
+}

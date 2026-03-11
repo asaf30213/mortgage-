@@ -46,7 +46,7 @@ export default function Testimonials() {
           ביקורות אמיתיות מלקוחות מרוצים
         </motion.p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div className="resp-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {testimonials.map((t, i) => (
             <motion.div
               key={i}

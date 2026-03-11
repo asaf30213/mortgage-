@@ -174,7 +174,7 @@ export default function Services() {
           פתרון מלא לכל מצב
         </motion.p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div className="resp-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {services.map((s, i) => (
             <ServiceCard key={i} service={s} delay={i * 0.08} />
           ))}

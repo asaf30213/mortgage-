@@ -184,7 +184,7 @@ export default function FooterCTA() {
             }}
           >
             {/* Name + Phone row */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 11 }}>
+            <div className="resp-grid-form" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 11 }}>
               <input
                 type="text"
                 placeholder="שם מלא"

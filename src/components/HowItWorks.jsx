@@ -113,9 +113,10 @@ export default function HowItWorks() {
           תהליך פשוט ב-4 שלבים
         </motion.p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, position: 'relative' }}>
+        <div className="resp-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, position: 'relative' }}>
           {/* Dashed connecting line */}
           <div
+            className="resp-hide"
             style={{
               position: 'absolute',
               top: 42,

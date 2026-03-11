@@ -188,7 +188,7 @@ const cards = [
 
 export default function PainPoints() {
   return (
-    <section style={{ padding: '100px 0', background: 'var(--navy)' }}>
+    <section className="resp-section" style={{ padding: '100px 0', background: 'var(--navy)' }}>
       <div className="container">
         <motion.h2
           className="section-title"
@@ -211,7 +211,7 @@ export default function PainPoints() {
           שלוש טעויות נפוצות שעולות עשרות אלפי שקלים
         </motion.p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: 40 }}>
+        <div className="resp-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: 40 }}>
           {cards.map((card, i) => (
             <motion.div
               key={i}
